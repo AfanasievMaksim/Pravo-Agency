@@ -1,0 +1,119 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.footer {
+  margin-top: 30px;
+  &__address {
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+  }
+  &__title {
+    font-size: 11px;
+    line-height: 22px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+  }
+  &__location {}
+  &__tel {}
+  &__mail {
+    color: $hover;
+    text-decoration: underline;
+  }
+  &__social {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  & .social__link {
+    margin: 0 20px 0 20px;
+    position: relative;
+  }
+  & .social__link-fb {
+    width: 5px; height: 12px;
+    background: url('img/css_sprites.png') -320px -108px;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border: 1px solid $border-color;
+      border-radius: 50%;
+      top: -15px;
+      left: -19px;
+    }
+    &:hover {
+      width: 5px;
+      height: 12px;
+      background: url('img/css_sprites.png') -320px -76px;
+    }
+    &:hover::before {
+      border-color: $hover-border;
+    }
+  }
+  & .social__link-tw {
+    width: 15px;
+    height: 11px;
+    background: url('img/css_sprites.png') -200px -81px;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border: 1px solid $border-color;
+      border-radius: 50%;
+      top: -15px;
+      left: -13px;
+    }
+    &:hover {
+      width: 15px;
+      height: 11px;
+      background: url('img/css_sprites.png') -215px -252px;
+    }
+    &:hover::before {
+      border-color: $hover-border;
+    }
+  }
+  & .social__link-in {
+    width: 12px;
+    height: 13px;
+    background: url('img/css_sprites.png') -320px -43px;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border: 1px solid $border-color;
+      border-radius: 50%;
+      top: -13px;
+      left: -16px;
+    }
+    &:hover {
+      width: 12px;
+      height: 13px;
+      background: url('img/css_sprites.png') -320px -10px;
+    }
+    &:hover::before {
+      border-color: $hover-border;
+    }
+  }
+  &__copyright {
+    margin: 30px 0 30px 0;
+  }
+  & .copyright__text {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+@media screen and (max-width: $small) {
+  .footer {
+    &__address {
+      font-size: 14px;
+      line-height: 28px;
+    }
+
+  }
+}

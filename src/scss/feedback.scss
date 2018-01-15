@@ -1,0 +1,194 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.feedback {
+  margin-top: 60px;
+  &__wrap {
+    border-bottom: 1px solid $border-color;
+  }
+  &__title {
+    text-align: center;
+
+  }
+  & .title__text {
+    position: relative;
+    text-transform: uppercase;
+    font-size: 28px;
+    line-height: 30px;
+    margin-bottom: 80px;
+    &::before {
+      content: '';
+      position: absolute;
+      @include botom__line;
+      top: 45px;
+      left: 50%;
+      margin-left: -20px;
+    }
+  }
+  & form {
+    width: 100%;
+  }
+  &__form {
+    display: flex;
+    justify-content: center;
+  }
+  & .form__inf {
+    margin-right: 40px;
+
+  }
+  & .form__peronal {
+    width: $form-width;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 13px;
+  }
+  & .form__name,
+  & .form__tel,
+  & .form__site,
+  & .form__email {
+    padding-bottom: 10px;
+    font-size: 11px;
+    line-height: 20px;
+    border: none;
+    border-bottom: 1px solid $form-border;
+    outline: none;
+    margin-bottom: 30px;
+    color: #000;
+    text-transform: uppercase;
+    box-sizing: border-box;
+  }
+
+  & .form_dop {
+    width: $form-width;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    box-sizing: border-box;
+  }
+  & .form__area {
+    min-height: 250px;
+    padding: 15px 20px;
+    border-color: $form-border;
+    outline: none;
+    &:focus {
+      box-shadow: inset 5px 5px 10px #ddd;
+    }
+  }
+  & .iner__wrap {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+  }
+  & .form__label-area {
+    font-size: 11px;
+    text-transform: uppercase;
+    line-height: 20px;
+  }
+  & .form__interes {
+    padding-bottom: 15px;
+    width: $form-width;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $form-border;
+  }
+  & .interes__title {
+    position: relative;
+    font-size: 11px;
+    line-height: 20px;
+    text-transform: uppercase;
+    background: #fcfcfd;
+    padding: 15px 20px;
+    border-bottom: 1px solid $form-border;
+    margin-bottom: 30px;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      background: url('img/css_sprites.png') -172px -252px;
+      top: 13px;
+      right: 10px;
+
+    }
+  }
+  & .interes__radio {
+    position: relative;
+    cursor: pointer;
+    font-size: 13px;
+    line-height: 20px;
+    padding-left: 45px;
+    margin-bottom: 15px;
+    &::before {
+      content: '';
+      position: absolute;
+      border: 3px solid $form-border;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      top: 4px;
+      left: 19px;
+    }
+
+  }
+  & input[type="radio"] {
+    opacity: 0;
+    &:checked + .interes__radio::before {
+      border-color: $hover;
+    }
+    &:checked + .interes__radio {
+      color: $hover;
+    }
+  }
+  & .interes__submit {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  & .form__submit {
+    border: none;
+  }
+}
+
+@media screen and (max-width: $small) {
+  .feedback {
+    & .title__text {
+      font-size: 20px;
+    }
+    & .iner__wrap {
+      flex-direction: column;
+      align-items: center;
+    }
+    & .form__inf {
+      width: 100%;
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin-right: 0;
+    }
+    & .form_dop {
+      margin-top: 0;
+      width: 90%;
+    }
+    & .form__peronal {
+      width: 90%;
+    }
+    & .form__interes {
+      width: 90%;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) and (min-width: $small){
+  .feedback {
+    & .form__peronal {
+      width: $form-large-width;
+    }
+    & .form_dop {
+      width: $form-large-width;
+    }
+    & .form__interes {
+      width: $form-large-width;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@import "partials/params";
+@import "partials/mixins";
+
+@media screen and (max-width: $large) {
+  .header {
+
+  }
+}
+
+@media screen and (max-width: $small) {
+  .header {}}

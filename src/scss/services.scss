@@ -1,0 +1,180 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.services {
+  &__wrap {
+    border-bottom: 1px solid $border-color;
+  }
+  &__wrap-dotted {
+    border-bottom: 1px dotted $border-color;
+  }
+  &__des {
+    margin-top: 60px;
+    text-align: center;
+
+  }
+  & .des__title {
+    position: relative;
+    text-transform: uppercase;
+    font-size: 28px;
+    line-height: 30px;
+    margin-bottom: 40px;
+    &::before {
+      content: '';
+      position: absolute;
+      @include botom__line;
+      top: 45px;
+      left: 50%;
+      margin-left: -20px;
+      }
+    }
+  & .des__text {
+    width: 50%;
+    margin: 0 auto;
+    line-height: 20px;
+    margin-bottom: 60px;
+  }
+  &__features {
+    display: flex;
+    justify-content: space-between;
+
+  }
+  & .features__item {
+    position: relative;
+    width: 50%;
+    padding: 30px 0 0 70px;
+    margin: 30px 0 30px 0;
+    &:hover .features__info
+    {
+      color: #fff;
+      background: $hover;
+    }
+    &:hover .document {
+      width: 40px; height: 41px;
+      background: url('img/css_sprites.png') -196px -190px;
+    }
+    &:hover .optimization {
+      width: 42px; height: 42px;
+      background: url('img/css_sprites.png') -10px -190px;
+    }
+    &:hover .sostavlenie {
+      width: 40px; height: 39px;
+      background: url('img/css_sprites.png') -10px -252px;
+    }
+    &:hover .sud {
+      width: 42px; height: 42px;
+      background: url('img/css_sprites.png') -72px -190px;
+    }
+
+  }
+  & .features__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  & .document {
+    width: 40px;
+    height: 41px;
+    background: url('img/css_sprites.png') -256px -190px;
+
+  }
+  & .optimization {
+    width: 42px; height: 42px;
+    background: url('img/css_sprites.png') -250px -80px;
+  }
+  & .sostavlenie {
+    width: 40px; height: 39px;
+    background: url('img/css_sprites.png') -70px -252px;
+  }
+  & .sud {
+    width: 42px; height: 42px;
+    background: url('img/css_sprites.png') -134px -190px;
+  }
+  & .features__title {
+    text-transform: uppercase;
+    font-size: 15px;
+    line-height: 20px;
+    margin-bottom: 25px;
+  }
+  & .features__text {
+    font-size: 13px;
+    line-height: 20px;
+    width: 100%;
+  }
+  & .features__list {
+    list-style-type: circle;
+    @include clear;
+    margin-left: 15px;
+    width: 100%;
+
+  }
+  & .list__item {
+    color: $hover;
+  }
+  & .item__text {
+    color: $font-color;
+    font-size: 13px;
+    line-height: 20px;
+  }
+  & .features__info {
+    position: absolute;
+    right: 50%;
+    margin-right: -215px;
+    top: 8px;
+    display: block;
+    padding-top: 2px;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    line-height: 20px;
+    font-family: Serif;
+    font-weight: bold;
+    box-sizing: border-box;
+    border: 2px solid $hover;
+    text-align: center;
+    border-radius: 50%;
+    &:hover {
+      cursor: pointer;
+    }
+
+  }
+}
+@media screen and (max-width: 930px) and (min-width: $small) {
+  .services {
+    &__features {
+      flex-direction: column;
+      align-items: center;
+    }
+    & .features__item {
+      width: 50%;
+    }
+
+  }
+}
+
+@media screen and (max-width: $small) {
+  .services {
+    &__features {
+      flex-direction: column;
+      align-items: center;
+    }
+    .des__title {
+      font-size: 20px;
+    }
+    & .des__text {
+      width: 90%;
+    }
+    & .features__item {
+      width: 80%;
+      box-sizing: border-box;
+      padding: 60px 0 0 0;
+      margin: 30px 0 0 0;
+    }
+    & .features__info {
+      top: 0;
+      left: 50%;
+    }
+    }
+
+  }
+

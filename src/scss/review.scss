@@ -1,0 +1,171 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.review {
+  &__wrap {
+    border-bottom: 1px solid $border-color;
+  }
+  &__des {
+    margin-top: 60px;
+    text-align: center;
+
+  }
+  & .des__title {
+    position: relative;
+    text-transform: uppercase;
+    font-size: 28px;
+    line-height: 30px;
+    margin-bottom: 40px;
+    &::before {
+      content: '';
+      position: absolute;
+      @include botom__line;
+      top: 45px;
+      left: 50%;
+      margin-left: -20px;
+    }
+  }
+  & .des__text {
+    width: 50%;
+    margin: 0 auto;
+    line-height: 20px;
+    margin-bottom: 60px;
+  }
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &__item {
+    width: 320px;
+    &:hover .item__pic {
+      width: 20px;
+      height: 25px;
+      background: url('img/css_sprites.png') -160px -81px;
+    }
+    &:hover .item__pic-video {
+      width: 25px; height: 25px;
+      background: url('img/css_sprites.png') -250px -142px;
+    }
+    &:hover .aut__img-1 {
+      width: 50px;
+      height: 50px;
+      background: url('img/css_sprites.png') -150px -120px;
+    }
+    &:hover .aut__img-2 {
+      width: 50px;
+      height: 50px;
+      background: url('img/css_sprites.png') -10px -120px;
+    }
+    &:hover .aut__name {
+      color: $hover;
+    }
+
+  }
+  & .item__pic {
+    display: block;
+    width: 20px;
+    height: 25px;
+    background: url('img/css_sprites.png') -120px -81px;
+    margin-bottom: 15px;
+    transition: 0.5s;
+  }
+  & .item__pic-video {
+    width: 25px; height: 25px;
+    background: url('img/css_sprites.png') -250px -142px;
+  }
+  & .item__text {
+    font-size: 17px;
+    line-height: 25px;
+  }
+  & .item__aut {
+    margin-bottom: 20px;
+  }
+  & .aut__img {
+    transition: 0.5s;
+
+  }
+  & .aut__img-1 {
+    margin: 30px 0 20px 0;
+    width: 50px;
+    height: 50px;
+    background: url('img/css_sprites.png') -250px -10px;
+  }
+  & .aut__img-2 {
+    margin: 30px 0 20px 0;
+    width: 50px; height: 50px;
+    background: url('img/css_sprites.png') -80px -120px;
+  }
+  & .aut__video {
+    margin-bottom: 19px;
+    cursor: pointer;
+  }
+  & .aut__name {
+    font-size: 13px;
+    line-height: 20px;
+    margin-bottom: 10px;
+  }
+  & .aut__source {
+    font-size: 12px;
+    line-height: 20px;
+  }
+  & .source__decor {
+    position: relative;
+    padding: 0 5px;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: $hover;
+      border-radius: 50%;
+      top: 5px;
+      left: 2px;
+    }
+  }
+  & .aut__link {
+    color: #000;
+  }
+  &__loader {
+    text-align: center;
+    margin-top: 75px;
+    margin-bottom: 60px;
+  }
+  & .loader__text {
+    position: relative;
+    display: block;
+    text-transform: uppercase;
+    font-size: 11px;
+    line-height: 30px;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 23px;
+      height: 20px;
+      background: url('img/css_sprites.png') -214px -252px;
+      top: 5px;
+      left: 50%;
+      margin-left: -80px;
+    }
+  }
+}
+
+@media screen and (max-width: $small) {
+  .review {
+    & .des__title {
+      font-size: 20px;
+    }
+    &__items {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &__item {
+      width: 80%;
+  }
+    & .aut__video {
+      width: 100%;
+      height: auto;
+    }
+}
+}

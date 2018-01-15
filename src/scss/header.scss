@@ -1,0 +1,173 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.header {
+  background-color: #f5f5f5;
+  padding-top: 21px;
+  display: flex;
+  flex-direction: column;
+
+  &__menu {
+    padding: 25px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__wrap {
+    background-color: #fff;
+    box-shadow: 5px 5px 10px #ddd;
+    z-index: 999;
+  }
+  & .menu__logo {
+    width: 110px; height: 51px;
+    background: url('img/css_sprites.png') -120px -10px;
+  }
+  &__nav {
+    margin-right: -340px;
+  }
+  & .nav__list {
+    @include clear;
+    display: flex;
+
+  }
+  & .nav__items {
+    margin-right: 30px;
+  }
+  & .nav__link {
+    color: $font-color;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 30px;
+    transition: 0.5s;
+    &:hover {
+      color: $hover;
+      padding-bottom: 5px;
+      border-bottom: 1px solid $hover;
+    }
+  }
+  & .lang__text {
+    position: relative;
+    font-size: 11px;
+    line-height: 30px;
+    background-color: #fff;
+    border: 2px solid $border-color;
+    color: $hover;
+    border-radius: 20px;
+    padding: 0 10px 0 40px;
+    outline: none;
+    text-align: right;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background-color: $border-color;
+      border-radius: 50%;
+      top: 5px;
+      left: 10px;
+      box-shadow: 1px 1px 3px #222;
+    }
+  }
+  &__slogan {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    & .slogan__play {
+      position: absolute;
+      width: 90px;
+      height: 90px;
+      background: url('img/css_sprites.png') -10px -10px;
+      top: 178px;
+      left: 45%;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  & .slogan__box {
+    margin-top: 61px;
+    width: 450px;
+  }
+  & .slogan__title {
+    position: relative;
+    font-size: 30px;
+    line-height: 35px;
+    padding-bottom: 35px;
+    &::before {
+      content: '';
+      position: absolute;
+      @include botom__line;
+      bottom: 0;
+      left: 0;
+    }
+  }
+  & .slogan__text {
+    color: $font-color;
+    margin-top: 30px;
+  }
+  & .slogan__btn {
+    position: relative;
+    padding-left: 36px;
+    box-sizing: border-box;
+    margin-top: 55px;
+    & .btn__logo {
+      position: absolute;
+      width: 22px;
+      height: 23px;
+      background: url('img/css_sprites.png') -130px -252px;
+      top: 13px;
+      left: 20px;
+    }
+  }
+  & .slogan__bg {
+    margin-right: 90px;
+    width: 400px;
+    height: 550px;
+    & .slogan__img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: $large) {
+  .header {
+&__nav {
+  margin-right: 0;
+}
+  }
+}
+
+@media screen and (max-width: $small) {
+  .header {
+    & .slogan__title {
+      font-size: 20px;
+      &::before {
+
+        left: 50%;
+        margin-left: -20px;
+      }
+    }
+    & .slogan__text {
+      font-size: 13px;
+    }
+    &__nav {
+      display: none;
+    }
+    &__slogan {
+      & .slogan__play {
+        display: none;
+      }
+    }
+    & .slogan__box {
+      width: 100%;
+      text-align: center;
+    }
+    & .slogan__btn {
+      margin: 55px auto 0 auto;
+    }
+    & .slogan__bg {
+      display: none;
+    }
+  }
+}
